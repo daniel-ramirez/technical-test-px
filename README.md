@@ -1,5 +1,5 @@
 # technical-test-px
-```
+```JS
 /* Instructions: If you get stuck write the portion out you can't complete in 
    pseudo code (try to still be specific about what you would do). Include a 
    question worded how you would ask another member of the development team 
@@ -42,3 +42,10 @@ let mattObj = {
   'Status': 'Active'
 }
 ```
+
+## Question that could be done prior and during developmet
+
+* Should the array be inmutable or mutable?; if it is mutable, this will give us the avility to update the values diretly in the array objects; but if not; we need to create a new array to add new values to the objects. My thought: It should be mutable to mutate objects in a quickly way and use the same array to perform the other processing.
+* Should I include the a CRUD to manage the array list in the development?
+* Regarding the UI, Which UI library will we use?
+* The data table in which I will present the data, Will it have sorting colunm by default
