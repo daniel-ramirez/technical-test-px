@@ -12,14 +12,14 @@ import { FavoritesRoutes } from "./favorite/favorite.routes.config";
 
 dotevnv.config();
 
+var PORT = 7000;
 if (!process.env.PORT) {
-    console.log(`No port value specified...`);
-    process.exit(1);
+    console.log(`No port value specified... Using default port: 7000`);
+} else {
+    PORT = parseInt(process.env.PORT as string, 10);
 }
 
 const routes: Array<CommonRoutesConfig> = [];
-
-const PORT = parseInt(process.env.PORT as string, 10);
 
 const app: express.Application = express();
 
