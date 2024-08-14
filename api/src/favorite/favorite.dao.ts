@@ -25,12 +25,17 @@ class FavoriteDao {
         this.favorites.push(convertToFavoriteDto(donnyObj));
         this.favorites.push(convertToFavoriteDto(mattObj));
         this.favorites.push(convertToFavoriteDto(danielObj));
-    }
 
-    async getFavorites(orderBy?: string) {
         this.favorites.map(f => {
             f.date = new Date();
         });
+    }
+
+    async getFavorites(status?: string, orderBy?: string) {
+        let result = this.favorites;
+        if (status !== "All") {
+            result = result.filter(f => f.status == status);
+        }
 
         if (orderBy) {
             function dynamicSort(property: string) {
@@ -47,9 +52,9 @@ class FavoriteDao {
                 }
             }
 
-            this.favorites = this.favorites.sort(dynamicSort(orderBy))
+            result = result.sort(dynamicSort(orderBy))
         }
-        return this.favorites;
+        return result;
     }
 }
 

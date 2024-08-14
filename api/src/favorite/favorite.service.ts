@@ -1,8 +1,8 @@
 import favoriteDao from "./favorite.dao";
 
 class FavoriteService {
-    async list(orderBy?: string) {
-        return favoriteDao.getFavorites(orderBy);
+    async list(status?: string, orderBy?: string) {
+        return favoriteDao.getFavorites(status, orderBy);
     }
 }
 
